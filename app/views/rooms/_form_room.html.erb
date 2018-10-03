@@ -1,0 +1,27 @@
+<%= form_for @room do |form| %>
+  <div class="form-row">
+      <div class="col">
+      <%= form.text_field :code, class: "form-control",
+        placeholder: t("rooms.code") %>
+      </div>
+      <div class="col">
+      <%= form.text_field :name, class: "form-control",
+        placeholder: t("rooms.name") %>
+      </div>
+      <div class="col">
+      <%= form.number_field :volume, class: "form-control",
+        placeholder: t("rooms.volume") %>
+      </div>
+      <div class="col">
+      <%= form.number_field :overseer_number, class: "form-control",
+        placeholder: t("rooms.number") %>
+      </div>
+      <div class="col">
+      <%= form.select :state, [[t("rooms.open"), true],
+        [t("rooms.close"), false]], {}, class: "form-control"%>
+      </div>
+      <div class="col">
+      <%= form.submit yield(:button_room),class: "btn btn-primary" %>
+      </div>
+  </div>
+<% end %>

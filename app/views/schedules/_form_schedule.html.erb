@@ -1,0 +1,13 @@
+<%= form_with url: schedules_path, method: :post, local: true do |form| %>
+  <div class="form-row">
+    <%= form.label t("schedules.start"), class: "my-1 mr-2" %>
+    <div class="col">
+      <%= form.date_field :times_start, id: :times_start, class: "form-control",
+        placeholder: t("schedules.start") %>
+    </div>
+
+    <div class="col">
+      <%= form.submit t("schedules.create"), class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

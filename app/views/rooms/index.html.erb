@@ -1,0 +1,57 @@
+<% provide :path_search, rooms_path %>
+<% provide :text_search, t("rooms.code") %>
+<% provide :button_search, t("rooms.search") %>
+<% unless @room.valid? %>
+<% provide :button_room, t("rooms.create") %>
+<% else %>
+<% provide :button_room, t("rooms.save") %>
+<% end %>
+<div class="navbar-form">
+<nav class="navbar navbar-expand-lg">
+  <div class="navbar-collapse" id="navbarNav">
+    <ul class="nav navbar-nav">
+      <li class="nav-item active">
+        <%= render "form_room"%>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav ml-auto">
+      <li class="nav-item active">
+        <%= render "shared/form_search" %>
+      </li>
+    </ul>
+  </div>
+</nav>
+</div>
+<table class="table table-bordered table-striped">
+  <thead class="bg-info">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col"><%= t("rooms.code") %></th>
+      <th scope="col"><%= t("rooms.name") %></th>
+      <th scope="col"><%= t("rooms.volume") %></th>
+      <th scope="col"><%= t("rooms.state") %></th>
+      <th scope="col"><%= t("table.edit") %></th>
+      <th scope="col"><%= t("table.delete") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @rooms.each.with_index(1) do |room, index| %>
+    <tr>
+      <th scope="row"><%= room.id %></th>
+      <td><%= room.code %></td>
+      <td><%= link_to room.name, room %></td>
+      <td><%= room.volume %></td>
+      <td><%if room.state %>
+        <%= t("rooms.open") %>
+      <%else%>
+        <%= t("rooms.close") %>
+        <%end %></td>
+      <th scope="col"><%= link_to t("table.edit") , edit_room_path(room) %></th>
+      <th scope="col"><%= link_to t("table.delete"), room , method: :delete,
+        data: { confirm: t("table.confirm") }%></th>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate @rooms ,
+ renderer: WillPaginate::ActionView::Bootstrap4LinkRenderer%>

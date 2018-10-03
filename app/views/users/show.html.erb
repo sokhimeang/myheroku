@@ -1,0 +1,29 @@
+<%= t "users.name" %>:
+<%= @user.name %>,
+<%= t "users.code" %>:
+<%= @user.code %>
+<table class="table table-bordered table-striped">
+  <thead class="bg-info">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col"><%= t("subjects.code") %></th>
+      <th scope="col"><%= t("subjects.name") %></th>
+      <th scope="col"><%= t("subjects.times") %></th>
+    </tr>
+  </thead>
+  <tbody
+    <% @subjects.each.with_index(1) do |subject,index| %>
+    <tr>
+      <th scope="row"><%= @subjects.offset + index %></th>
+      <td><%= subject.code %></td>
+      <td><%= link_to subject.name, subject %></td>
+      <td>
+        <%= subject.times_exam %>
+        <%= t("table.minute") %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate @subjects ,
+ renderer: WillPaginate::ActionView::Bootstrap4LinkRenderer%>

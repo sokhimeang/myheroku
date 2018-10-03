@@ -1,0 +1,34 @@
+<table class="table table-bordered table-striped">
+  <thead class="bg-info">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col"><%= t("users.code") %></th>
+      <th scope="col"><%= t("users.name") %></th>
+      <th scope="col"><%= t("table.edit") %></th>
+      <th scope="col"><%= t("table.delete") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each.with_index(1) do |user,index| %>
+    <tr>
+      <td><%= @users.offset+ index %></td>
+      <td><%= user.code %></td>
+      <td><%= link_to user.name , user %></td>
+      <td><%= link_to t("table.edit"),
+       edit_user_path(user) %></td>
+      <td>
+        <% if @subject %>
+          <%= link_to t("table.delete"),
+            remove_subjects_path(id: @subject.id, code: user.code ),
+              method: :post, data: { confirm: t("table.confirm") } %>
+        <% else %>
+          <%= link_to t("table.delete"), user, method: :delete,
+            data: { confirm: t("table.confirm") } %>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate @users ,
+  renderer: WillPaginate::ActionView::Bootstrap4LinkRenderer%>

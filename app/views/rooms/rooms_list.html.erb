@@ -1,0 +1,52 @@
+<% provide :title, t ".title" %>
+<% provide :id, "body_room" %>
+<%= render "layouts/menu" %>
+<section>
+  <form action="delete_room" method="get">
+    <h1><% t ".name" %>
+      <section class="links">
+        </br>
+        <a class="link wipe" href="add_room">Thêm</a>
+      </section>
+    </h1>
+    <div class="tbl-header">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th><% t ".room_name" %></th>
+            <th><% t ".disk" %></th>
+            <th><% t ".edit" %></th>
+            <th><% t ".delete" %></th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="tbl-content">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tbody>
+          <tr>
+            <td>a</td>
+            <td>b</td>
+            <td>c</td>
+            <td>
+              <section class="links">
+                <%= link_to t(".edit_link"), "#", class: "link underline", style: "margin-left: -10px" %>
+              </section>
+            </td>
+            <td>
+              <div>
+                <label>
+                  <input type="checkbox" class="option-input checkbox" name="<?php echo $room[$i]['id']?>"/><% t ".delete_checkbox" %>
+                </label>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="wrap">
+      <button class="button"><% t ".delete_button" %></button>
+    </div>
+  </form>
+</section>

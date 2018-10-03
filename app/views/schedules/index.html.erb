@@ -1,0 +1,60 @@
+<% provide :button_search, t("schedules.search") %>
+<% provide :text_search, t("users.code") %>
+<% provide :path_search, schedules_path %>
+<div class="navbar-form">
+<nav class="navbar navbar-expand-lg">
+  <div class="navbar-collapse" id="navbarNav">
+    <ul class="nav navbar-nav">
+      <li class="nav-item active">
+        <%= render "form_schedule"%>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav ml-auto">
+      <li class="nav-item active">
+        <%= render "shared/form_search" %>
+      </li>
+    </ul>
+  </div>
+</nav>
+</div>
+<table class="table table-bordered table-striped">
+  <thead class="bg-info">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col"><%= t("schedules.day") %></th>
+      <th scope="col"><%= t("schedules.session") %></th>
+      <th scope="col"><%= t("subjects.code") %></th>
+      <th scope="col"><%= t("subjects.name") %></th>
+      <th scope="col"><%= t("rooms.code") %></th>
+      <th scope="col"><%= t("rooms.name") %></th>
+      <th scope="col"><%= t("schedules.group") %></th>
+      <th scope="col"><%= t("subjects.times") %></th>
+      <th scope="col"><%= t("table.edit") %></th>
+      <th scope="col"><%= t("table.delete") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @schedules.each.with_index(1) do |schedule,index| %>
+    <tr>
+      <td><%= link_to @schedules.offset + index, schedule %></td>
+      <td><%= schedule.day %></td>
+      <td><%= schedule.session %></td>
+      <td><%= schedule.code_subject %></td>
+      <td><%= link_to schedule.name_subject, "#" %></td>
+      <td><%= schedule.room_code %></td>
+      <td><%= link_to schedule.room_name, "#" %></td>
+      <td><%= schedule.group %></td>
+      <td>
+       <%= schedule.times_exam %>
+       <%= t("table.minute") %>
+      </td>
+      <th scope="col"><%= link_to t("table.edit"),
+       edit_schedule_path(schedule) %></th>
+      <th scope="col"><%= link_to t("table.delete"), schedule, method: :delete,
+        data: { confirm: t("table.confirm") }%></th>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate @schedules ,
+  renderer: WillPaginate::ActionView::Bootstrap4LinkRenderer %>

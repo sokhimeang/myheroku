@@ -1,0 +1,11 @@
+<%= form_with url: yield(:path_search),method: :get, local: true do |f|%>
+  <div class="form-row">
+      <div class="col">
+      <%= f.text_field :search, id: :search, class: "form-control",
+        placeholder: yield(:text_search) %>
+      </div>
+      <div class="col">
+      <%= f.submit yield(:button_search), class: "btn btn-primary" %>
+      </div>
+  </div>
+<% end %>

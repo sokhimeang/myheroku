@@ -1,0 +1,63 @@
+en:
+  flash_delete: "delete success"
+  flash_update: "update success"
+  flash_create: "create success"
+  flash_delete_fail: "delete failure"
+  flash_update_fail: "update failure"
+  flash_create_fail: "create failure"
+  table:
+    confirm: "Are you sure?"
+    edit: "edit"
+    delete: "delete"
+    minute: "minute"
+  subjects:
+    code: "code subject"
+    name: "name subject"
+    times: "times exam"
+    create: "create subject"
+    save: "save edit"
+    search: "search subject"
+    add: "add student"
+    total: "total student"
+  schedules:
+    day: "day exam"
+    session: "session"
+    create: "create schedule"
+    start: "Start day"
+    end: "End date"
+    search: "search schedule"
+    group: "group"
+    list: "list of exam classes"
+  rooms:
+    search: "search room"
+    code: "room code"
+    name: "room name"
+    state: "state"
+    volume: "volume"
+    open: "open"
+    close: "close"
+    create: "add room"
+    number: "number see"
+    save: "save edit"
+  layouts:
+  header:
+    schedules: "Schedules"
+    subjects: "Subjects"
+    rooms: "Rooms"
+    login: "Login"
+    user: "Users"
+    contact: "Contact"
+  footer:
+    en: "english"
+    vi: "vietnamese"
+    author: "designer @dinh van nam"
+  users:
+    code: "code student"
+    name: "name student"
+    search: "search student"
+  notice:
+    times_exam_html: "<br><h3>Notification schedule</h3>
+           <h4>Session 1: 7:15 to 9:15</h4>
+           <h4>Session 2: 9:45 to 11:45</h4>
+           <h4>Session 3: From 12:45 to 2:45</h4>
+           <h4>Session 4: From 3:15 to 5:15</h4"

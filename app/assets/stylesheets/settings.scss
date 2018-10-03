@@ -1,0 +1,47 @@
+table {
+opacity:0.8;
+}
+
+body {
+  background:url(background.jpg) no-repeat;
+  background-size: cover;
+  color: black;
+  text-align: center;
+}
+.header {
+  padding: 30px;
+  text-align: center;
+  background:url(header.jpg) no-repeat;
+  background-size:cover;
+  background-position: center;
+}
+.header .navbar{
+  margin-top: 50px;
+  opacity:0.9;
+  border-radius: 25px;
+}
+
+footer {
+    background:url(footer.png) no-repeat;
+    background-size:cover;
+    padding: 40px;
+    text-align: center;
+    color: white;
+}
+
+main {
+  min-height:500px;
+}
+
+.navbar-form .navbar {
+  opacity:0.9;
+}
+
+.notice {
+  background:url(background-2.png) no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin-top: 50px;
+  height: 280px;
+  font-style: italic;
+}

@@ -1,0 +1,64 @@
+vi:
+  flash_delete: "xóa thành công"
+  flash_update: "cập nhật thành công"
+  flash_create: "tạo thành công"
+  flash_delete_fail: "xóa thất bại"
+  flash_update_fail: "cập nhật thất bại"
+  flash_create_fail: "tạo mới thất bại"
+  table:
+    confirm: "bạn có chắc muốn xóa không ?"
+    edit: "sửa"
+    delete: "xóa"
+    minute: "phút"
+  subjects:
+    code: "mã học phần"
+    name: "tên học phần"
+    times: "thời gian thi"
+    create: "tạo học phần"
+    save: "lưu chỉnh sửa"
+    search: "tìm học phần"
+    add: "thêm sinh viên"
+    total: "tổng số sinh viên"
+  schedules:
+    day: "ngày thi"
+    session: "kíp thi"
+    create: "tạo lịch thi"
+    start: "Ngày bắt đầu"
+    end: "Ngày kết thúc"
+    search: "tìm lịch thi"
+    group: "nhóm thi"
+    list: "danh sách lớp thi"
+  rooms:
+    search: "tìm phòng"
+    code: "mã phòng"
+    name: "tên phòng"
+    state: "tình trạng"
+    volume: "sức chứa"
+    open: "mở"
+    close: "đóng"
+    create: "tạo phòng"
+    number: "số giám thị"
+    save: "lưu chỉnh sửa"
+  layouts:
+  header:
+    schedules: "Lịch thi"
+    subjects: "Học phần"
+    rooms: "Phòng thi"
+    notice: "Thông báo"
+    login: "Đăng nhập"
+    user: "Người dùng"
+    contact: "Liên hệ"
+  footer:
+    en: "tiếng anh"
+    vi: "tiếng việt"
+    author: "tác giả @dinh van nam"
+  users:
+    code: "mã sinh viên"
+    name: "tên sinh viên"
+    search: "tìm sinh viên"
+  notice:
+    times_exam_html: "<br><h3>thông báo lịch thi</h3>
+                 <h4>kíp 1: từ 7 giờ 15 đến 9 giờ 15</h4>
+                 <h4>kíp 2: từ 9 giờ 45 đến 11 giờ 45</h4>
+                 <h4>kíp 3: từ 12 giờ 45 đến 2 giờ 45</h4>
+                 <h4>kíp 4: từ 3 giờ 15 đến 5 giờ 15"

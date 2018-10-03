@@ -1,0 +1,29 @@
+<p><%= t "schedules.list" %>:
+  <%= @schedule.name_subject %>
+  <%= t "schedules.group" %>: <%= @schedule.group %></p>
+<table class="table table-bordered table-striped">
+  <thead class="bg-info">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col"><%= t("users.code") %></th>
+      <th scope="col"><%= t("users.name") %></th>
+      <th scope="col"><%= t("table.delete") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each.with_index(1) do |user,index| %>
+    <tr>
+      <td><%= @users.offset+ index %></td>
+      <td><%= user.code %></td>
+      <td><%= link_to user.name , user %></td>
+      <td>
+          <%= link_to t("table.delete"),
+            edit_schedule_path(user_id: user.id),
+              method: :post, data: { confirm: t("table.confirm") } %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate @users , renderer: WillPaginate::ActionView::
+  Bootstrap4LinkRenderer%>
